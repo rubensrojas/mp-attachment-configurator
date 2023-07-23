@@ -36,7 +36,7 @@ const AttachmentOptionsMatchCard: React.FC<{
             <p>{currencyFormatter(price)}</p>
           </div>
           <div className="flex gap-2 justify-between">
-            <Link href={`/${slug}}`} className="btn no-underline">
+            <Link href={`/attachments/${slug}`} className="btn no-underline">
               Buy now
             </Link>
             <button

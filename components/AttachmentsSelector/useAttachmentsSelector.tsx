@@ -229,12 +229,25 @@ const useAttachmentsSelector = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [steps, setSteps] = useState<Step[]>(mockSteps);
 
+  const [isLoadingMatches, setIsLoadingMatches] = useState(false);
   const [hasFoundMatches, setHasFoundMatches] = useState(false);
-  const [equipamentMatches, setEquipamentMatches] = useState(attachments);
+  const [equipamentMatches, setEquipamentMatches] = useState<
+    AttachmentMatchOption[] | null
+  >(null);
+
+  const loadEquipamentMatches = () => {
+    setIsLoadingMatches(true);
+
+    setTimeout(() => {
+      setHasFoundMatches(true);
+      setIsLoadingMatches(false);
+      setEquipamentMatches(attachments);
+    }, 2000);
+  };
 
   const handleNextStep = () => {
     if (currentStep < steps.length - 1) setCurrentStep(currentStep + 1);
-    else setHasFoundMatches(true);
+    else loadEquipamentMatches();
   };
 
   const handlePreviousStep = () => {
@@ -258,6 +271,7 @@ const useAttachmentsSelector = () => {
     currentStep,
     hasFoundMatches,
     equipamentMatches,
+    isLoadingMatches,
     handleNextStep,
     handlePreviousStep,
     handleOptionSelection,

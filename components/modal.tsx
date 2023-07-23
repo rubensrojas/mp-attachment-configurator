@@ -12,9 +12,9 @@ const Modal: React.FC<{
         className
       )}
     >
-      <div className="relative flex flex-col gap-8 sm:gap-16 px-6 py-4 bg-white rounded border-2 border-black w-full sm:w-fit max-w-2xl md:max-w-4xl shadow-sm">
+      <div className="relative flex flex-col gap-8 sm:gap-16 px-6 py-4 bg-white rounded border-2 border-black w-full max-w-2xl md:max-w-4xl shadow-sm">
         <button
-          className="absolute right-0 top-0 block w-fit underline leading-8 h-fit mr-6 mt-4"
+          className="absolute right-0 top-0 block w-fit leading-8 h-fit mr-6 mt-4 btn--outline hover:bg-gray-100 underline border-none"
           type="button"
           onClick={closeModal}
         >

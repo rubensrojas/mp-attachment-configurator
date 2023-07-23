@@ -28,8 +28,8 @@ const AttachmentOptions: React.FC<{
   return (
     <>
       <div className="flex gap-4 w-full justify-between">
-        <div className="flex-col gap-4 pr-12">
-          <h3 className="text-2xl font-bold">{title}</h3>
+        <div className="flex-col gap-4">
+          <h3 className="text-2xl font-bold pr-24">{title}</h3>
           <p>{subtitle}</p>
         </div>
       </div>
@@ -46,7 +46,7 @@ const AttachmentOptions: React.FC<{
       <div className="w-full flex gap-8 justify-between items-center">
         <a
           href="#"
-          className="text-brand-black"
+          className="btn--outline hover:bg-gray-100 underline border-none"
           onClick={() => alert("A expert will be in touch soon!")}
         >
           Not sure?
