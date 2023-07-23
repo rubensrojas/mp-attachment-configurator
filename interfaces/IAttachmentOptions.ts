@@ -3,4 +3,5 @@ export type AttachmentOption = {
   description?: string;
   slug: string;
   icon?: React.ReactNode;
+  iconDescripton?: string;
 };

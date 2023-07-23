@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
+// Components
 import AttachmentOptionButton from "./AttachmentOptionButton";
 import { AttachmentOption } from "@/interfaces/IAttachmentOptions";
 
@@ -11,34 +11,24 @@ const AttachmentOptions: React.FC<{
   title: string;
   subtitle?: string;
   options: AttachmentOption[];
-  currentOption?: string;
+  selectedOption: string | null;
   nextStep: () => void;
   previousStep: () => void;
+  handleOptionSelection: (option: string) => void;
 }> = ({
   step,
   title,
   subtitle,
   options,
-  currentOption,
+  selectedOption,
   nextStep,
   previousStep,
+  handleOptionSelection,
 }) => {
-  const [selectedOption, setSelectedOption] = useState<string | null>(
-    currentOption ?? null
-  );
-
-  const handleOptionSelection = (option: string): void => {
-    if (selectedOption === option) {
-      setSelectedOption(null);
-      return;
-    }
-    setSelectedOption(option);
-  };
-
   return (
     <>
       <div className="flex gap-4 w-full justify-between">
-        <div className="flex-col gap-4">
+        <div className="flex-col gap-4 pr-12">
           <h3 className="text-2xl font-bold">{title}</h3>
           <p>{subtitle}</p>
         </div>
@@ -64,7 +54,6 @@ const AttachmentOptions: React.FC<{
               className={twMerge(
                 "btn--outline hover:bg-gray-100 underline border-none"
               )}
-              disabled={!selectedOption}
               onClick={() => previousStep()}
             >
               Back

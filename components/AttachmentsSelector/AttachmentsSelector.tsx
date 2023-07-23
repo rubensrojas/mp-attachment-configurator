@@ -8,8 +8,13 @@ import useAttachmentsSelector from "./useAttachmentsSelector";
 const AttachmentsSelector: React.FC<{
   closeModal: () => void;
 }> = ({ closeModal }) => {
-  const { steps, currentStep, handleNextStep, handlePreviousStep } =
-    useAttachmentsSelector();
+  const {
+    steps,
+    currentStep,
+    handleNextStep,
+    handlePreviousStep,
+    handleOptionSelection,
+  } = useAttachmentsSelector();
 
   return (
     <Modal closeModal={closeModal}>
@@ -17,6 +22,7 @@ const AttachmentsSelector: React.FC<{
         {...steps[currentStep]}
         nextStep={handleNextStep}
         previousStep={handlePreviousStep}
+        handleOptionSelection={handleOptionSelection}
       />
     </Modal>
   );
