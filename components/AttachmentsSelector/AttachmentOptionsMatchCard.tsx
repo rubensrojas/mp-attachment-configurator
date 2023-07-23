@@ -49,7 +49,10 @@ const AttachmentOptionsMatchCard: React.FC<{
         </div>
       </div>
       {isDetailsOpen && (
-        <Modal className="h-full" closeModal={() => setIsDetailsOpen(false)}>
+        <Modal
+          className="fixed h-full"
+          closeModal={() => setIsDetailsOpen(false)}
+        >
           <h6 className="font-bold px-12 text-center text-2xl py-12">
             The {name} is a great option for your needs! <br />
             Trust Machinery Partner and go ahead!
