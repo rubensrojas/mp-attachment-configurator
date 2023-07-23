@@ -1,8 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Barlow({
+  weight: ["300", "500", "600", "700"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Machinery Partner - Attachment Selector",
