@@ -4,18 +4,13 @@ import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import AttachmentOptionButton from "./AttachmentOptionButton";
-
-type option = {
-  name: string;
-  slug: string;
-  icon?: React.ReactNode;
-};
+import { AttachmentOption } from "@/interfaces/IAttachmentOptions";
 
 const AttachmentOptions: React.FC<{
   step: number;
   title: string;
   subtitle?: string;
-  options: option[];
+  options: AttachmentOption[];
   currentOption?: string;
   nextStep: () => void;
   previousStep: () => void;
@@ -48,7 +43,7 @@ const AttachmentOptions: React.FC<{
           <p>{subtitle}</p>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 items-end">
         {options.map((option) => (
           <AttachmentOptionButton
             key={option.slug}

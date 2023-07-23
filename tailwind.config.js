@@ -19,6 +19,9 @@ module.exports = {
         "brand-yellow-light": "#ffce66",
         "light-gray": "#525351",
       },
+      dropShadow: {
+        "brand-yellow": "0px 0px 10px #ffba3f",
+      },
     },
   },
   plugins: [],
