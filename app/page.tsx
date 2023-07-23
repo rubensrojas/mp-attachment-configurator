@@ -1,6 +1,6 @@
 "use client";
 
-import Modal from "@/components/modal";
+import AttachmentsSelector from "@/components/AttachmentsSelector";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -69,7 +69,7 @@ export default function Home() {
           />
         </div>
       </main>
-      {isOpen && <Modal closeModal={() => setIsOpen(false)} />}
+      {isOpen && <AttachmentsSelector closeModal={() => setIsOpen(false)} />}
     </>
   );
 }
