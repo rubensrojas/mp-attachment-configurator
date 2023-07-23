@@ -3,8 +3,23 @@ import Link from "next/link";
 import AttachmentOptionsMatchCard from "./AttachmentOptionsMatchCard";
 
 const AttachmentOptionsMatch: React.FC<{
-  equipamentOptions: AttachmentMatchOption[];
+  equipamentOptions: AttachmentMatchOption[] | null;
 }> = ({ equipamentOptions }) => {
+  if (!equipamentOptions)
+    return (
+      <>
+        <div className="grid place-content-center p-12">
+          <a
+            href="#"
+            className="btn--outline hover:bg-gray-100 underline border-none p-12"
+            onClick={() => alert("An expert will be in touch soon!")}
+          >
+            No matches found. Talk to an expert!
+          </a>
+        </div>
+      </>
+    );
+
   return (
     <>
       <h3 className="text-2xl font-bold pr-12">
