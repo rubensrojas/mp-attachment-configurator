@@ -17,6 +17,7 @@ module.exports = {
         "brand-black": "#171718",
         "brand-yellow": "#ffba3f",
         "brand-yellow-light": "#ffce66",
+        "brand-yellow-pastel": "#fffaeb",
         "light-gray": "#525351",
       },
       dropShadow: {
