@@ -4,8 +4,8 @@ const perks = ["Expert advice", "Fast & easy financing", "24/7 support"];
 
 export default function Home() {
   return (
-    <main className="px-20 pt-44 max-w-xxl mx-auto">
-      <div className="flex flex-col gap-16 md:flex-row max-w-[1288px] mx-auto">
+    <main className="px-5 md:px-20 py-10 md:py-44 max-w-xxl mx-auto">
+      <div className="flex flex-col-reverse gap-16 md:flex-row max-w-[1288px] mx-auto">
         <div className="flex flex-col gap-8 max-w-[680px]">
           <h1 className="text-6xl font-bold">New Breakers For Sale</h1>
           <p className=" text-light-gray leading-snug">
@@ -27,7 +27,7 @@ export default function Home() {
             </a>
             .
           </p>
-          <div className="flex gap-8">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-8">
             {perks.map((perk) => (
               <div key={perk} className="flex gap-2">
                 <Image
