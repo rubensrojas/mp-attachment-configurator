@@ -40,12 +40,14 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <button
-            type="button"
-            className="py-4 px-6 w-fit block bg-brand-yellow rounded font-semibold leading-none text-lg"
-          >
-            Talk to an expert today
-          </button>
+          <div className="flex gap-8">
+            <button type="button" className="btn">
+              Talk to an expert today
+            </button>
+            <button type="button" className="btn--outline">
+              Attachment Finder
+            </button>
+          </div>
         </div>
         <Image
           className="object-contain h-auto max-h-[330px]"
