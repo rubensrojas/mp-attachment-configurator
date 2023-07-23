@@ -1,5 +1,8 @@
 import { useState } from "react";
-import { AttachmentOption } from "@/interfaces/IAttachmentOptions";
+import {
+  AttachmentMatchOption,
+  AttachmentOption,
+} from "@/interfaces/IAttachmentOptions";
 import Image from "next/image";
 
 const machines: AttachmentOption[] = [
@@ -188,6 +191,31 @@ const mockSteps: Step[] = [
   },
 ];
 
+const attachments: AttachmentMatchOption[] = [
+  {
+    name: "HF300",
+    description: "Cone Splitter",
+    price: 12000,
+    image: "/wrench.png",
+    slug: "hf300",
+  },
+  {
+    name: "HF150",
+    description: "Cone Splitter",
+    price: 7500,
+    image: "/wrench.png",
+    slug: "hf150",
+    isRecommended: true,
+  },
+  {
+    name: "HF400",
+    description: "Cone Splitter",
+    price: 30000,
+    image: "/wrench.png",
+    slug: "hf400",
+  },
+];
+
 interface Step {
   step: number;
   title: string;
@@ -201,8 +229,12 @@ const useAttachmentsSelector = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [steps, setSteps] = useState<Step[]>(mockSteps);
 
+  const [hasFoundMatches, setHasFoundMatches] = useState(false);
+  const [equipamentMatches, setEquipamentMatches] = useState(attachments);
+
   const handleNextStep = () => {
     if (currentStep < steps.length - 1) setCurrentStep(currentStep + 1);
+    else setHasFoundMatches(true);
   };
 
   const handlePreviousStep = () => {
@@ -224,6 +256,8 @@ const useAttachmentsSelector = () => {
   return {
     steps,
     currentStep,
+    hasFoundMatches,
+    equipamentMatches,
     handleNextStep,
     handlePreviousStep,
     handleOptionSelection,

@@ -3,6 +3,7 @@
 // Components
 import Modal from "../Modal";
 import AttachmentOptions from "./AttachmentOptions";
+import AttachmentOptionsMatch from "./AttachmentOptionsMatch";
 import useAttachmentsSelector from "./useAttachmentsSelector";
 
 const AttachmentsSelector: React.FC<{
@@ -11,10 +12,19 @@ const AttachmentsSelector: React.FC<{
   const {
     steps,
     currentStep,
+    hasFoundMatches,
+    equipamentMatches,
     handleNextStep,
     handlePreviousStep,
     handleOptionSelection,
   } = useAttachmentsSelector();
+
+  if (hasFoundMatches)
+    return (
+      <Modal closeModal={closeModal}>
+        <AttachmentOptionsMatch equipamentOptions={equipamentMatches} />
+      </Modal>
+    );
 
   return (
     <Modal closeModal={closeModal}>

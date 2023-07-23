@@ -44,7 +44,11 @@ const AttachmentOptions: React.FC<{
         ))}
       </div>
       <div className="w-full flex gap-8 justify-between items-center">
-        <a href="#" className="text-brand-black">
+        <a
+          href="#"
+          className="text-brand-black"
+          onClick={() => alert("A expert will be in touch soon!")}
+        >
           Not sure?
           <br className="sm:hidden" /> Talk to an expert!
         </a>

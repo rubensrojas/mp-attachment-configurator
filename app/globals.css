@@ -32,13 +32,13 @@ a {
 }
 
 .btn {
-  @apply py-4 px-6 w-fit block bg-brand-yellow border-2 border-brand-yellow rounded font-semibold leading-none text-base;
+  @apply py-4 px-6 w-fit block bg-brand-yellow border-2 border-brand-yellow rounded font-semibold leading-none text-base text-brand-black;
   @apply transition-colors ease-in-out duration-200 hover:bg-brand-yellow-light hover:border-brand-yellow-light;
   @apply disabled:opacity-70 disabled:cursor-not-allowed;
 }
 
 .btn--outline {
-  @apply py-4 px-6 w-fit block border-2 border-black rounded font-semibold leading-none text-base;
+  @apply py-4 px-6 w-fit block border-2 border-black rounded font-semibold leading-none text-base text-brand-black;
   @apply transition-colors ease-in-out duration-200 hover:bg-brand-yellow-pastel hover:border-brand-yellow-light;
   @apply disabled:opacity-70 disabled:cursor-not-allowed;
 }

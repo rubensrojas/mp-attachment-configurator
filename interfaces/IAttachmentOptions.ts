@@ -1,7 +1,16 @@
-export type AttachmentOption = {
+export interface AttachmentOption {
   name: string;
   description?: string;
   slug: string;
   icon?: React.ReactNode;
   iconDescripton?: string;
-};
+}
+
+export interface AttachmentMatchOption {
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  slug: string;
+  isRecommended?: boolean;
+}
