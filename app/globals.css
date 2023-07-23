@@ -17,7 +17,7 @@
 }
 
 body {
-  color: #171718;
+  @apply text-brand-black;
   letter-spacing: 0.03em;
 }
 
@@ -28,15 +28,17 @@ body {
 
 a {
   color: #228be6;
-  border-bottom: 1px solid #228be6;
+  text-decoration: underline;
 }
 
 .btn {
-  @apply py-4 px-6 w-fit block bg-brand-yellow rounded font-semibold leading-none text-base;
-  @apply transition-colors ease-in-out duration-200 hover:bg-brand-yellow-light;
+  @apply py-4 px-6 w-fit block bg-brand-yellow border-2 border-brand-yellow rounded font-semibold leading-none text-base;
+  @apply transition-colors ease-in-out duration-200 hover:bg-brand-yellow-light hover:border-brand-yellow-light;
+  @apply disabled:opacity-70 disabled:cursor-not-allowed;
 }
 
 .btn--outline {
   @apply py-4 px-6 w-fit block border-2 border-black rounded font-semibold leading-none text-base;
   @apply transition-colors ease-in-out duration-200 hover:bg-brand-yellow-light hover:border-brand-yellow-light;
+  @apply disabled:opacity-70 disabled:cursor-not-allowed;
 }
