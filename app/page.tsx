@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="px-5 md:px-20 py-10 md:py-44 max-w-xxl mx-auto">
+      <main className="py-10 md:py-44 max-w-xxl mx-auto">
         <div className="flex flex-col-reverse items-center gap-16 md:flex-row max-w-[1288px] mx-auto">
           <div className="flex flex-col gap-8 max-w-[680px]">
             <h1 className="text-4xl md:text-6xl font-bold">Wood Splitters</h1>

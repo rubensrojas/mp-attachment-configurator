@@ -1,6 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Barlow } from "next/font/google";
+import Image from "next/image";
+import { twJoin } from "tailwind-merge";
 
 const inter = Barlow({
   weight: ["300", "500", "600", "700"],
@@ -19,7 +21,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={twJoin(inter.className, "px-5 md:px-20 py-4")}>
+        <nav>
+          <div className="flex gap-1">
+            <Image src="/logo.svg" alt="logo" width={50} height={30} />
+            <Image
+              src="/logo-lettering.svg"
+              alt="logo"
+              width={100}
+              height={30}
+            />
+          </div>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
