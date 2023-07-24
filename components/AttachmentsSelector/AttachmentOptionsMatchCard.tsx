@@ -40,7 +40,7 @@ const AttachmentOptionsMatchCard: React.FC<{
               Buy now
             </Link>
             <button
-              className="btn--outline hover:bg-gray-100 underline border-none"
+              className="btn--outline hover:bg-gray-100 underline border-none hover:shadow transition-all"
               onClick={() => setIsDetailsOpen(true)}
             >
               Details
