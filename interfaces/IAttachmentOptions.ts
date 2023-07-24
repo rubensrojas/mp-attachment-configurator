@@ -14,3 +14,12 @@ export interface AttachmentMatchOption {
   slug: string;
   isRecommended?: boolean;
 }
+
+export interface Step {
+  step: number;
+  title: string;
+  subtitle?: string;
+  options: AttachmentOption[];
+  currentOption?: string;
+  selectedOption: string | null;
+}
